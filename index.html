@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPDS Academy</title>
+    <style>
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        z-index: 9999;
+        font-family: sans-serif;
+      }
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f4f6;
+        border-top: 5px solid #f97316;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 1rem;
+      }
+      .loader-text {
+        color: #f97316;
+        font-weight: bold;
+        letter-spacing: 1px;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div id="initial-loader">
+        <div class="spinner"></div>
+        <div class="loader-text">IPDS ACADEMY</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
