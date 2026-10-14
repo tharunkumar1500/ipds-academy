@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: 🚚 Get Code
         uses: actions/checkout@v4
-      
+
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: 📦 Install Packages
         run: npm install
@@ -23,7 +23,7 @@ jobs:
       - name: 🛠️ Build React App
         run: npm run build
 
-      - name: 🚀 Upload to Hostinger
+      - name: 🚀 Upload to Hostinger via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -31,7 +31,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./public_html/
-
-
-
-          
+          protocol: ftps
+          port: 21
+          security: strict
