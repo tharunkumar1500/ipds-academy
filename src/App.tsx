@@ -241,6 +241,7 @@ export default function App() {
         </div>
         <div className="mt-12 pt-8 border-t border-gray-100 text-center text-gray-500 text-sm">
           &copy; {new Date().getFullYear()} IPDS Academy. All rights reserved.
+          <p>Created by Tharunkumar</p>
         </div>
       </footer>
     </div>
